@@ -1,0 +1,75 @@
+
+
+{% extends "layout.html" %}
+
+
+{%block title%}Search{%endblock%}
+
+{%block body%}
+
+
+
+<body class="search-body">
+
+<p class="search-par ">SEARCH BOOK REVIEW  </p> 
+
+ 
+<div class="small ">
+  <label>Sort By: </label> 
+  Search by author,isbn or title
+
+
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Search form -->
+  <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan active-cyan search" method="POST" >
+   <button class="btn-search" type="submit" ><i class="fas fa-search"   style="color:white" aria-hidden="true"></i></button> 
+    <input class="form-control form-control-sm ml-3 w-75 search2" type="text" placeholder="Search" 
+      aria-label="Search" name="searchquerry" required>
+   
+     
+      
+  
+
+      {% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<div class="alert alert-primary alert-dismissible fade show" role="alert">
+							<span>{{ message }}</span>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					{% endfor %}
+				{% endif %}
+        {% endwith %}
+       
+        <br>
+             
+      <div class="results">
+        
+      <ul>
+        {%for book in searchresult%}
+      <li>
+        <h5>
+          <a href="{{ url_for('book', isbn = book.isbn) }}"> <b>{{book.isbn}}-{{ book.title }}</b> by {{ book.author }} </a>
+        </h5>
+      </li>
+          {%endfor%}
+
+      </ul>
+      </div>
+  </form>
+
+</ul>
+
+{%endblock%}
+
+
+
+
+
+
+

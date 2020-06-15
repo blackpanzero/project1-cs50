@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{bookInfo[0]['title']}}
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="row book-container">
+        <div class="col-sm-4">
+            <img src="http://covers.openlibrary.org/b/isbn/{{bookInfo[0]['isbn']}}-M.jpg" width="150px">    
+        </div>
+        <div class="col-sm-4">
+            <h1>{{bookInfo[0]['title']}}</h1>
+            <h5>Author: {{bookInfo[0]['author']}}</h5>
+            <h5>Published: {{bookInfo[0]['year']}}</h5>
+            <h5>ISBN-10: {{bookInfo[0]['isbn']}}</h5>
+        </div>
+
+        <!--GOODREADS REVIEWS -->
+        <div class="col-sm-4">
+            <img class="mb-3" src="https://selfpublishingadvice.org/wp-content/uploads/2016/08/goodreads.jpg" alt="Goodreads" width="200" height="45">
+            <h5>Nº of Ratings: {{bookInfo[1]['work_ratings_count']}}</h5>
+            <h5>Average Rating: {{bookInfo[1]['average_rating']}}</h5>
+            <h5>
+                <a href="https://www.goodreads.com/search?q={{bookInfo[0]['title']}}">Goodreads site</a>
+            </h5>
+        </div>
+    </div>
+    <div class="dropdown-divider"></div>
+
+   
+    
+
+    <div>
+        <!-- REVIEW FORM -->
+        <form method="POST" class=" text-center  border-light p-5 form-review" >
+            <div class="contact-h4">
+
+                <br>
+                <p class="h4 mb-4 contact-h4">Share Your Book Review  </p>
+                
+              </div>
+              <br>
+
+             {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        <span>{{ message }}</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+                <div class="form-group">
+                    
+                    <select id="rating" name="rating" class="form-control" required>
+                        <option selected value="" disabled>Rating between 1-5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <div class="input-group">
+                        
+                        <textarea name="comment" id="comment" class="form-control" rows="5" placeholder="How was the book?" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm">
+                    <button class="btn btn-info btn-block"" type="submit">Submit</button>
+                
+            </div>
+        </form>
+
+        
+
+        <!-- REVIEW LIST -->
+        <h4 class="alert alert-warning">Users Reviews</h4>
+        <div >
+            <h2></h2>
+            {% for review in reviews %}
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1" style="color:burlywood">{{review.username}} </h6>
+                        
+                    </div>
+                    <p class="mb-1">{{review.comment}}</p>
+                    <small>Rated: {{review.rating}}</small>
+                </a>
+                <div class="dropdown-divider"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

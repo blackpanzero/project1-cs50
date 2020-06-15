@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block body %}
+
+  <br>
+  <br>
+  <h2 class="center-text"> Personal Details</h2>
+  {% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<div class="alert alert-primary alert-dismissible fade show" role="alert">
+							<span>{{ message }}</span>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					{% endfor %}
+				{% endif %}
+			  {% endwith %}
+
+  <div class="row justify-content-center">
+    <div class="col-auto">
+        <table class="table">
+          
+            <tr>
+                <td class="font-weight-bold">username</td>
+                <td>{{g.user.username}}  </td>
+            
+            </tr>
+            <tr>
+                <td class="font-weight-bold">Email</td>
+                <td>
+                 {{email}} <a href="{{url_for('emailreset')}}"><i class='fas fa-edit' style='font-size:15px'></i></a>
+                </td>
+             
+
+            </tr>
+            
+            <tr>
+                <td class="font-weight-bold">No of books Reviewed</td>
+                <td>{{reviewcount}}</td>
+             
+                
+            </tr>
+
+        </table>
+    </div>
+  </div>
+        </div> 
+
+<h2 class="center-text" >Your Book Reviews</h2>
+<div class="row color">
+    <div class="col-sm-4">
+        <h2>Thumbnail</h2>
+
+    </div>
+    <div class="col-sm-4">
+        <h2>Book</h2>
+
+    </div>
+    <div class="col-sm-4">
+        <h2>Your Review</h2>
+
+    </div>
+
+
+</div>
+       
+     <br>
+
+        <!--GOODREADS REVIEWS -->
+        {% for result in results %}
+
+    <div class="row book-container">
+
+       
+        <div class="col-sm-4">
+            <img src="http://covers.openlibrary.org/b/isbn/{{result.isbn}}-M.jpg" width="150px">    
+        </div>
+        <div class="col-sm-4">
+            
+            <a href="{{url_for('book',isbn=result.isbn)}}" style="color:burlywood" class="white">  <h1>{{result.title}}</h1></a>
+            <h5>Author: {{result.author}}</h5>
+            <h5>Published: {{result.year}}</h5>
+            <h5>ISBN-10: {{result.isbn}}</h5>
+        </div>
+        <div class="col-sm-4">
+           
+            
+            <div>
+                <h2></h2>
+                
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1" style="color:burlywood">You said.. </h6>
+                            
+                        </div>
+                        <p class="mb-1">{{result.comment}}</p>
+                        <small>Rated: {{result.rating}}</small>
+                    </a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+      
+            
+       <br>
+       <div class="dropdown-divider"></div> 
+                
+                {%endfor %}
+                
+          
+      
+              
+   
+
+   
+    
+
+{% endblock %}

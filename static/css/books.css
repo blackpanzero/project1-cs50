@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+background-attachment: fixed;
+background-color: teal;
+color: white !important;
+}
+a:hover{
+    color: white;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 420px!important;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+.footer{
+    height: 10px!important;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    background-size: cover!important;
+    }
+.heading{
+   left: 10px;
+}
+
+
+  .active-cyan-2 input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #4dd0e1;
+    box-shadow: 0 1px 0 0 #4dd0e1;
+  }
+  .active-cyan input[type=text] {
+
+    border-bottom: 1px solid #4dd0e1;
+    box-shadow: 0 1px 0 0 #4dd0e1;
+  }
+.search{
+    position: absolute; /* or absolute */
+    top: 50%;
+    left: 25%;
+    width: 50%;
+    font-size: 20px;
+  
+    
+
+
+}
+.search2{
+    border-radius: 17px!important;
+    
+
+}
+.search-body{
+    background-color: black;
+}
+.fa :hover  {
+    color: #4dd0e1!important;
+    cursor: pointer;
+}
+.search-hello{
+   float:right;
+   font-size: 20px;
+
+}
+.search-body{
+    color: white;
+    
+}
+.search-par{
+   
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    left: 35%;
+    top: 35%;
+    font-weight: 45px;
+    font-size: 30px;
+    
+    position: absolute;
+}
+.dropdown-item ,.dropdown-menu{
+    color: white !important;
+    background-color: rgb(23, 32, 63)!important;
+}
+.dropdown-item:hover{
+    background-color: rgb(47, 56, 182)!important;
+}
+.error{
+    color: rgb(253, 251, 251)!important;
+}
+.btn-search{
+    background-color: inherit!important;
+    border: none !important;
+}
+
+.results a,.results h2{
+    color: white;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+.results a:hover{
+    color: white!important;
+    
+    
+}
+.center-text{
+    text-align: center;
+}
+
+
+
+
+.form-review{
+  width: 55%;
+  margin: auto;
+}
+.btn-block{
+    background-color: rgb(35, 33, 167)!important;
+}
+.fieldset { 
+  border-top:0px;
+  border-left: 0px;
+  border-right: 0px;
+
+}
+
+
+
+
+.contact-h4{
+  background-color: rgb(35, 33, 167);
+  padding: 1px;
+
+  color: white;
+}
+.small{
+    font-size: 18px!important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    left: 40%;
+    top: 42%;
+    font-weight: 45px;
+    
+    
+    
+    position: absolute;
+}
+.color{
+    background-color: rgba(0,0,0,0.8) !important;
+}
+.white:hover{
+  color: rgb(139, 114, 80)!important;
+  text-decoration: none;
+}
+
+table{
+    font-size: 18px!important;
+}
+
+table a,.navcolor{
+    color: white!important;
+
+  }
+.options{
+    position: absolute; /* or absolute */
+    top: 60!important;
+    left: 50%;
+    width: 50%;
+    font-size: 20px;
+  
+}
+@media only screen and (max-width: 600px) {
+    .search-par{
+        font-size: 20px;
+    }
+    .search {
+      width: 95%;
+      top: 50%;
+      left: 5%;
+      
+      text-align: center;
+  
+    }
+
+    .form-review{
+    width: 95%;
+    margin: auto;
+    }
+   
+  
+    }
